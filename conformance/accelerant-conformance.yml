@@ -1,0 +1,55 @@
+generated: '2026-08-02'
+method: searched
+source: https://app.accelerant.ai/.well-known/openid-configuration
+docs: https://accelerant.ai/resources/built-on-trust-and-transparency-accelerant-earns-iso-27001-certification/
+note: 'Conformance assertions are limited to what Accelerant publishes anonymously.
+  The API host and developer documentation are both gated, so no OpenAPI-derived
+  conformance could be computed. Only the OpenID Connect discovery document, the JWKS,
+  and Accelerant''s own published certification announcement provide evidence.'
+standards:
+- id: openid-connect-discovery-1.0
+  conforms: true
+  evidence: 'https://app.accelerant.ai/.well-known/openid-configuration returns HTTP
+    200 with a valid OIDC discovery document (issuer, authorization_endpoint, token_endpoint,
+    userinfo_endpoint, jwks_uri).'
+- id: oauth2
+  conforms: true
+  evidence: 'OIDC discovery advertises response_types_supported: [code] — OAuth 2.0
+    authorization code flow.'
+- id: rfc7517-jwks
+  conforms: true
+  evidence: 'https://app.accelerant.ai/.well-known/jwks.json returns HTTP 200 with an
+    RSA JSON Web Key Set; id_token_signing_alg_values_supported: [RS256].'
+- id: iso-27001
+  conforms: true
+  evidence: 'Accelerant publicly announced ISO/IEC 27001:2022 certification of its
+    Information Security Management System — https://accelerant.ai/resources/built-on-trust-and-transparency-accelerant-earns-iso-27001-certification/'
+- id: rfc8414-oauth-authorization-server-metadata
+  conforms: false
+  evidence: '/.well-known/oauth-authorization-server returns HTTP 401 on app.accelerant.ai
+    and HTTP 404 on api.accelerant.ai.'
+- id: rfc9728-oauth-protected-resource-metadata
+  conforms: false
+  evidence: '/.well-known/oauth-protected-resource returns HTTP 401.'
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: 'No /.well-known/security.txt served on accelerant.ai (404) or app.accelerant.ai
+    (401).'
+- id: rfc9727-api-catalog
+  conforms: false
+  evidence: 'No /.well-known/api-catalog served anonymously.'
+- id: openapi
+  conforms: false
+  evidence: 'No OpenAPI/Swagger document retrievable anonymously on any Accelerant host
+    — see well-known/accelerant-well-known.yml x-contract-discovery.'
+- id: a2a
+  conforms: false
+  evidence: 'No agent card at /.well-known/agent-card.json or /.well-known/agent.json
+    on any probed host.'
+- id: mcp
+  conforms: false
+  evidence: 'No hosted MCP server discovered; mcp.accelerant.ai does not resolve.'
+x-other-ratings:
+  note: 'Not a conformance/compliance standard — recorded for context only.'
+  am_best: 'Accelerant''s insurers carry an AM Best A- (Excellent) financial strength
+    rating (company-published claim).'

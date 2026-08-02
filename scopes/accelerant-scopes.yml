@@ -1,0 +1,46 @@
+generated: '2026-08-02'
+method: probed
+source: https://app.accelerant.ai/.well-known/openid-configuration
+note: 'Scopes taken verbatim from the scopes_supported array of the Accelerant Risk
+  Exchange platform OpenID Connect discovery document. These are the standard OIDC
+  identity scopes the platform advertises for anonymous discovery; any resource/API
+  scopes for the Member API surface at api.accelerant.ai are not published anonymously
+  and would require the gated developer documentation to enumerate. No scopes have
+  been invented.'
+schemes:
+- name: AccelerantPlatformOIDC
+  source: well-known/accelerant-openid-configuration.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://app.accelerant.ai/api/auth/oidc/authorize
+    tokenUrl: https://app.accelerant.ai/api/auth/oidc/token
+scopes:
+- scope: openid
+  description: Standard OpenID Connect scope requesting an ID token for the authenticated
+    Accelerant platform user.
+  flows:
+  - authorizationCode
+  sources:
+  - well-known/accelerant-openid-configuration.json
+- scope: profile
+  description: Access to the authenticated user's default profile claims.
+  flows:
+  - authorizationCode
+  sources:
+  - well-known/accelerant-openid-configuration.json
+- scope: name
+  description: Access to the authenticated user's name claim.
+  flows:
+  - authorizationCode
+  sources:
+  - well-known/accelerant-openid-configuration.json
+- scope: email
+  description: Access to the authenticated user's email claim.
+  flows:
+  - authorizationCode
+  sources:
+  - well-known/accelerant-openid-configuration.json
+x-evidence:
+  fetched: '2026-08-02'
+  url: https://app.accelerant.ai/.well-known/openid-configuration
+  http_status: 200

@@ -1,0 +1,36 @@
+generated: '2026-08-02'
+method: searched
+source: public package registry search
+note: 'No first-party Accelerant client libraries or SDKs were found in any public
+  package registry. Registry hits on the name "accelerant" belong to unrelated third
+  parties and are recorded below as explicitly NOT official so a later round does not
+  re-evaluate them. Accelerant''s front-end platform loads private "@accelins/*" ES
+  modules from https://cdn.app.accelerant.ai/modules/ — these are internal application
+  modules served from Accelerant''s own CDN, not published packages, and are not
+  installable. No SDKs pointer is wired in apis.yml because Accelerant publishes no
+  client library.'
+packages: []
+excluded:
+- language: javascript
+  registry: npm
+  name: accelerant
+  url: https://www.npmjs.com/package/accelerant
+  official: false
+  reason: 'Unrelated third party — "A service worker for simplifying your frontend
+    integration with Firebase" (github.com/bjester/accelerant).'
+- language: python
+  registry: pypi
+  name: accelerant
+  url: https://pypi.org/project/accelerant/
+  official: false
+  reason: 'Unrelated third party — "accelerant for scientific automation" by Mike McKerns
+    (github.com/Scientific-AI/accelerant).'
+registries_probed:
+- {registry: npm, query: accelerant, official_hits: 0}
+- {registry: npm, query: accelins, official_hits: 0, total_results: 0}
+- {registry: pypi, query: accelerant, official_hits: 0}
+- {registry: github, org: accelins, note: 'Official Accelerant GitHub organization
+    (blog https://accelerant.ai/); 1 public repository — "actions", a set of GitHub
+    Actions for vulnerability checking. No client SDKs published.'}
+- {registry: github, org: accelerant, note: 'Name collision — "Accelerant Studios",
+    Arlington VA, unrelated; 0 public repositories.'}

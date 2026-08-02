@@ -1,0 +1,28 @@
+{
+    "issuer": "https://app.accelerant.ai",
+    "authorization_endpoint": "https://app.accelerant.ai/api/auth/oidc/authorize",
+    "token_endpoint": "https://app.accelerant.ai/api/auth/oidc/token",
+    "userinfo_endpoint": "https://app.accelerant.ai/api/auth/oidc/userinfo",
+    "jwks_uri": "https://app.accelerant.ai/.well-known/jwks.json",
+    "response_types_supported": [
+        "code"
+    ],
+    "subject_types_supported": [
+        "public"
+    ],
+    "id_token_signing_alg_values_supported": [
+        "RS256"
+    ],
+    "scopes_supported": [
+        "openid",
+        "profile",
+        "name",
+        "email"
+    ],
+    "claims_supported": [
+        "sub",
+        "name",
+        "email",
+        "profile"
+    ]
+}

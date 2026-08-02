@@ -1,23 +1,122 @@
 aid: accelerant
 name: Accelerant
-description: 'Accelerant is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Accelerant Holdings (NYSE: ARX) operates the Accelerant Risk Exchange,
+  a data-driven marketplace that connects underwriters of specialty insurance risk
+  — MGAs, program administrators, captive managers and retail brokers, referred to
+  as Members — with risk capital providers including insurers, reinsurers and institutional
+  investors. Founded in 2018 and headquartered in Grand Cayman with operations across
+  the United States, Canada, the United Kingdom, Europe and Australia, the company
+  runs three segments: Exchange Services, MGA Operations and Underwriting. Its member
+  platform at app.accelerant.ai delivers AI and machine-learning underwriting products
+  — risk scoring, portfolio risk monitoring, geospatial intelligence, product intelligence,
+  underwriting referrals and bordereaux (BDX) data submission and observability — and
+  the company states that its risk indices plug directly into Member underwriting and
+  policy administration systems via API. Developer documentation is published at docs.accelerant.ai
+  behind Member authentication; the platform publishes an anonymous OpenID Connect
+  discovery document and JWKS at app.accelerant.ai.'
 url: https://raw.githubusercontent.com/api-evangelist/accelerant/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+image: https://avatars.githubusercontent.com/u/102661090?v=4
 specificationVersion: '0.20'
 created: '2026-08-02'
 modified: '2026-08-02'
 tags:
-- Company
-apis: []
+- Insurance
+- InsurTech
+- Specialty Insurance
+- Underwriting
+- Risk Management
+- Reinsurance
+- Marketplace
+- Risk Scoring
+- Financial Services
+- Artificial Intelligence
+apis:
+- aid: accelerant:risk-exchange-platform
+  name: Accelerant Risk Exchange Platform
+  description: 'The member-facing Accelerant Risk Exchange platform and its supporting
+    API surface. Accelerant states that its risk indices plug directly into Member
+    underwriting and policy administration systems via API, and it operates a dedicated
+    API host at api.accelerant.ai alongside a Mintlify-hosted developer documentation
+    site at docs.accelerant.ai. Both surfaces are gated: docs.accelerant.ai redirects
+    unauthenticated requests to the Accelerant platform sign-in, and api.accelerant.ai
+    is fronted by a WAF that returns HTTP 403 to anonymous requests. No machine-readable
+    OpenAPI, GraphQL, AsyncAPI or MCP contract could be retrieved anonymously as of
+    this profiling pass — see well-known/accelerant-well-known.yml for the full probe
+    log. The platform does publish an anonymous OpenID Connect discovery document and
+    JWKS.'
+  humanURL: https://docs.accelerant.ai/
+  baseURL: https://api.accelerant.ai
+  tags:
+  - Insurance
+  - Underwriting
+  - Risk Scoring
+  properties:
+  - type: Documentation
+    url: https://docs.accelerant.ai/
+  - type: Authentication
+    url: authentication/accelerant-authentication.yml
+  - type: OAuthScopes
+    url: scopes/accelerant-scopes.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/accelerant-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/accelerant_stock/
+  url: https://accelerant.ai/
+- type: Overview
+  url: https://accelerant.ai/overview/
+- type: About
+  url: https://accelerant.ai/about-us/
+- type: Technology
+  url: https://accelerant.ai/the-technology/
+- type: Documentation
+  url: https://docs.accelerant.ai/
+- type: Login
+  url: https://app.accelerant.ai/
+- type: Support
+  url: https://accelerant.ai/contact/
+- type: Blog
+  url: https://accelerant.ai/resources/
+- type: News
+  url: https://accelerant.ai/category/news/
+- type: PressReleases
+  url: https://accelerant.ai/category/press-release/
+- type: GitHubOrganization
+  url: https://github.com/accelins
+- type: InvestorRelations
+  url: https://investor.accelerant.ai/
+- type: Careers
+  url: https://ats.rippling.com/accelerant/jobs
+- type: TermsOfService
+  url: https://accelerant.ai/terms-and-conditions/
+- type: PrivacyPolicy
+  url: https://accelerant.ai/privacy-policy/
+- type: CookiePolicy
+  url: https://accelerant.ai/cookies-policy/
+- type: RegulatoryPublications
+  url: https://accelerant.ai/regulatory-publications/
+- type: WellKnown
+  url: well-known/accelerant-well-known.yml
+- type: Authentication
+  url: authentication/accelerant-authentication.yml
+- type: OAuthScopes
+  url: scopes/accelerant-scopes.yml
+- type: Conformance
+  url: conformance/accelerant-conformance.yml
+- type: Compliance
+  url: https://accelerant.ai/resources/built-on-trust-and-transparency-accelerant-earns-iso-27001-certification/
+- type: Packages
+  url: packages/accelerant-packages.yml
+- type: LLMsTxt
+  url: llms/accelerant-llms.txt
+x-enrichment:
+  date: '2026-08-02'
+  status: enriched
+  artifacts_added: 9
+  pass: local-v1

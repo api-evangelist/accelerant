@@ -1,0 +1,111 @@
+generated: '2026-08-02'
+method: probed
+source: https://app.accelerant.ai/.well-known/openid-configuration
+hosts:
+- https://app.accelerant.ai
+- https://api.accelerant.ai
+- https://accelerant.ai
+- https://docs.accelerant.ai
+documents:
+- host: https://app.accelerant.ai
+  path: /.well-known/openid-configuration
+  standard: OpenID Connect Discovery 1.0
+  status: 200
+  content_type: application/json
+  file: accelerant-openid-configuration.json
+- host: https://app.accelerant.ai
+  path: /.well-known/jwks.json
+  standard: RFC 7517 JSON Web Key Set
+  status: 200
+  content_type: application/json
+  file: accelerant-jwks.json
+- host: https://app.accelerant.ai
+  path: /.well-known/oauth-authorization-server
+  standard: RFC 8414
+  status: 401
+  note: platform returns an authenticated-only JSON error envelope
+- host: https://app.accelerant.ai
+  path: /.well-known/oauth-protected-resource
+  standard: RFC 9728
+  status: 401
+- host: https://app.accelerant.ai
+  path: /.well-known/security.txt
+  standard: RFC 9116
+  status: 401
+- host: https://app.accelerant.ai
+  path: /.well-known/api-catalog
+  standard: RFC 9727
+  status: 401
+- host: https://app.accelerant.ai
+  path: /.well-known/ai-plugin.json
+  status: 401
+- host: https://app.accelerant.ai
+  path: /.well-known/agent-card.json
+  standard: A2A 1.0.0
+  status: 401
+- host: https://api.accelerant.ai
+  path: /.well-known/openid-configuration
+  status: 404
+- host: https://api.accelerant.ai
+  path: /.well-known/oauth-authorization-server
+  status: 404
+- host: https://api.accelerant.ai
+  path: /.well-known/api-catalog
+  status: 404
+- host: https://api.accelerant.ai
+  path: /.well-known/agent-card.json
+  status: 404
+- host: https://accelerant.ai
+  path: /.well-known/security.txt
+  status: 404
+- host: https://accelerant.ai
+  path: /.well-known/agent-card.json
+  status: 404
+- host: https://accelerant.ai
+  path: /.well-known/agent.json
+  status: 404
+- host: https://accelerant.ai
+  path: /.well-known/openid-configuration
+  status: 404
+# STEP 0b contract discovery — every path probed anonymously before concluding
+# that no machine-readable contract is publicly retrievable. Recorded so a later
+# round does not repeat the work and can spot the moment a surface opens up.
+x-contract-discovery:
+  probed: '2026-08-02'
+  result: no-public-machine-readable-contract
+  summary: 'api.accelerant.ai resolves and is served behind Cloudflare, which answers
+    HTTP 403 to every anonymous request except /.well-known/* (which the origin answers
+    with a plain-text 404). docs.accelerant.ai is a Mintlify site that 307-redirects
+    every anonymous request to https://app.accelerant.ai/mintlify-login, which in turn
+    303-redirects to the platform sign-in — the developer documentation is Member-gated.
+    The underlying public Mintlify deployment at accelins.mintlify.app serves only the
+    unmodified Mintlify Starter Kit boilerplate (title "Mintlify Starter Kit", two
+    placeholder pages), so it carries no Accelerant content and was deliberately NOT
+    harvested as an Accelerant llms.txt or documentation source. No OpenAPI, Swagger,
+    GraphQL SDL, AsyncAPI, MCP tools/list or A2A agent card was retrievable anonymously.'
+  probes:
+  - {url: 'https://api.accelerant.ai/', status: 403, note: cloudflare-waf}
+  - {url: 'https://api.accelerant.ai/openapi.json', status: 403, note: cloudflare-waf}
+  - {url: 'https://api.accelerant.ai/openapi.yaml', status: 403, note: cloudflare-waf}
+  - {url: 'https://api.accelerant.ai/swagger.json', status: 403, note: cloudflare-waf}
+  - {url: 'https://api.accelerant.ai/v1/openapi.json', status: 403, note: cloudflare-waf}
+  - {url: 'https://api.accelerant.ai/api-docs', status: 403, note: cloudflare-waf}
+  - {url: 'https://api.accelerant.ai/docs', status: 403, note: cloudflare-waf}
+  - {url: 'https://api.accelerant.ai/redoc', status: 403, note: cloudflare-waf}
+  - {url: 'https://api.accelerant.ai/graphql', status: 403, note: cloudflare-waf}
+  - {url: 'https://api.accelerant.ai/health', status: 403, note: cloudflare-waf}
+  - {url: 'https://docs.accelerant.ai/', status: 307, note: 'redirects to app.accelerant.ai/mintlify-login'}
+  - {url: 'https://docs.accelerant.ai/openapi.json', status: 307, note: auth-gated}
+  - {url: 'https://docs.accelerant.ai/llms.txt', status: 307, note: auth-gated}
+  - {url: 'https://docs.accelerant.ai/docs.json', status: 307, note: auth-gated}
+  - {url: 'https://docs.accelerant.ai/sitemap.xml', status: 307, note: auth-gated}
+  - {url: 'https://accelins.mintlify.app/llms.txt', status: 200, note: 'unmodified Mintlify Starter Kit boilerplate — not Accelerant content, not harvested'}
+  - {url: 'https://app.accelerant.ai/openapi.json', status: 200, note: 'HTML application shell, not a spec'}
+  - {url: 'https://app.accelerant.ai/api/openapi.json', status: 401}
+  - {url: 'https://accelerant.ai/openapi.json', status: 403, note: cloudflare-waf}
+  - {url: 'https://accelerant.ai/llms.txt', status: 404}
+  - {url: 'https://mcp.accelerant.ai/', status: 0, note: no-dns}
+  - {url: 'https://developer.accelerant.ai/', status: 0, note: no-dns}
+  - {url: 'https://status.accelerant.ai/', status: 0, note: no-dns}
+  - {url: 'https://trust.accelerant.ai/', status: 0, note: no-dns}
+  - {url: 'https://security.accelerant.ai/', status: 0, note: no-dns}
