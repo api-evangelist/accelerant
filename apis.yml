@@ -59,7 +59,7 @@ tags:
 - Reinsurance
 - Marketplace
 - Risk Scoring
-- Financial-Services
+- Financial Services
 - Artificial Intelligence
 tags_raw:
 - Insurance
@@ -72,6 +72,7 @@ tags_raw:
 - Risk Scoring
 - Financial Services
 - Artificial Intelligence
+- Financial-Services
 apis:
 - aid: accelerant:risk-exchange-platform
   name: Accelerant Risk Exchange Platform

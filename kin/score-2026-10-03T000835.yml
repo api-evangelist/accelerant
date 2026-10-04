@@ -1,31 +1,29 @@
-# Kin Score artifact — accelerant — 2026-08-25T143147
+# Kin Score artifact — accelerant — 2026-10-03T000835
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: accelerant
-  schema_version: 0.14.0
-  scored_at: '2026-08-25'
-  run_ts: 2026-08-25T143147
-  composite: 26.9
-  band: thin
+  schema_version: 0.23.0
+  scored_at: '2026-10-03'
+  run_ts: 2026-10-03T000835
+  composite: 24.3
+  band: emerging
   facets:
-    discoverability: 68.5
+    discoverability: 75.8
     contract_quality: 0.0
-    governance: 18.2
+    contract_governance: 18.2
     operational_transparency: 2.6
     developer_ergonomics: 19.0
-    commercial_clarity: 35.5
-    contract_governance: 18.2
     access_clarity: 35.5
   agent_readiness:
-    score: 2.5
-    band: human-only
+    score: 27.3
+    band: agent-aware
     dimensions:
       spec_presence: false
       agentic_access: false
       reversibility_documented: false
-      mcp_server: false
-      auth_clarity: bearer
+      mcp_server: verified
+      auth_clarity: served
       idempotency: false
       error_semantics: false
       openapi_examples: false
@@ -36,15 +34,16 @@ kin_score:
       consent_identity: false
       agent_card: false
       dry_run_mode: false
-      delegated_identity: false
-      protected_resource_metadata: false
-      dynamic_client_registration: false
+      delegated_identity: served
+      protected_resource_metadata: verified
+      dynamic_client_registration: true
       agentic_commerce: false
   regulatory:
     applies: true
     regime: Insurance
     regime_id: insurance
-    score: 71.2
+    score: 38.5
     matched_via: tags
   provenance:
+    mcp: first-party
     conformance: first-party
