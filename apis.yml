@@ -45,7 +45,7 @@ accessModel:
 image: https://avatars.githubusercontent.com/u/102661090?v=4
 specificationVersion: '0.23'
 created: '2026-08-02'
-modified: '2026-08-02'
+modified: '2026-10-06'
 x-docs-platform: mintlify
 x-docs-platform-confidence: medium
 x-docs-platform-checked: 2026-09-17
@@ -106,6 +106,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://accelerant.ai/resources/feed/
+  type: BlogRSS
 - type: DomainSecurity
   url: security/accelerant-domain-security.yml
 - type: Website
