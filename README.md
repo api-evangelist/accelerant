@@ -64,30 +64,105 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-APIs.json profile for **Accelerant Holdings (NYSE: ARX)** — the Accelerant Risk Exchange, a data-driven
-marketplace connecting underwriters of specialty insurance risk (MGAs, program administrators, captive
-managers, retail brokers) with risk capital providers.
+Accelerant Holdings (NYSE: ARX) operates the Accelerant Risk Exchange, a data-driven marketplace that connects underwriters of specialty insurance risk — MGAs, program administrators, captive managers and retail brokers, referred to as Members — with risk capital providers including insurers, reinsurers and institutional investors. Founded in 2018 and headquartered in Grand Cayman with operations across the United States, Canada, the United Kingdom, Europe and Australia, the company runs three segments: Exchange Services, MGA Operations and Underwriting. Its member platform at app.accelerant.ai delivers AI and machine-learning underwriting products — risk scoring, portfolio risk monitoring, geospatial intelligence, product intelligence, underwriting referrals and bordereaux (BDX) data submission and observability — and the company states that its risk indices plug directly into Member underwriting and policy administration systems via API. Developer documentation is published at docs.accelerant.ai behind Member authentication; the platform publishes an anonymous OpenID Connect discovery document and JWKS at app.accelerant.ai.
 
-- Website: https://accelerant.ai/
-- Platform: https://app.accelerant.ai/
-- Developer documentation: https://docs.accelerant.ai/ (Member authentication required)
-- API host: https://api.accelerant.ai
+**Areas:** Insurance · Insurtech · Specialty Insurance · Underwriting · Risk Management · Reinsurance · Marketplace · Risk Scoring · Financial Services · Artificial Intelligence
 
-## Profiling notes
+## Accelerant on APIs.io
 
-Accelerant's API surface is Member-gated. As of the 2026-08-02 enrichment pass no OpenAPI, GraphQL,
-AsyncAPI, MCP or A2A contract is retrievable anonymously — `api.accelerant.ai` is WAF-protected (403)
-and `docs.accelerant.ai` redirects unauthenticated requests to platform sign-in. The full contract
-discovery probe log is recorded in `well-known/accelerant-well-known.yml` under `x-contract-discovery`.
+Everything profiled for Accelerant is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/accelerant/](https://apis.io/providers/accelerant/)** — or go straight to one of the APIs or properties below.
 
-What Accelerant does publish anonymously, and what is captured here:
+### APIs (1)
 
-- `well-known/` — OpenID Connect discovery document and JWKS (saved verbatim), plus the probe index
-- `authentication/` — the OIDC authentication profile derived from that discovery document
-- `scopes/` — the OIDC scopes advertised by the platform
-- `conformance/` — standards conformance, including ISO/IEC 27001:2022 certification
-- `security/` — TLS/HSTS/DNS posture probe
-- `packages/` — registry search result (no first-party SDKs published)
-- `llms/` — generated llms.txt
+- [Accelerant Risk Exchange Platform](https://apis.io/apis/accelerant/risk-exchange-platform/) — The member-facing Accelerant Risk Exchange platform and its supporting API surface. Accelerant states that its risk indices plug directly into Member…
 
-Part of the [API Evangelist](https://apievangelist.com) network, published to [APIs.io](https://apis.io).
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [accelerant](https://apis.io/servers/accelerant/accelerant/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Accelerant Authentication](https://apis.io/security/accelerant/accelerant-authentication/)
+- [Accelerant Domain Security](https://apis.io/security/accelerant/accelerant-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Accelerant Scopes](https://apis.io/scopes/accelerant/accelerant-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://accelerant.ai/)
+- [Documentation](https://docs.accelerant.ai/)
+- [Support](https://accelerant.ai/contact/)
+- [Blog](https://accelerant.ai/resources/)
+- [Compliance](https://accelerant.ai/resources/built-on-trust-and-transparency-accelerant-earns-iso-27001-certification/)
+- [Terms of service](https://accelerant.ai/terms-and-conditions/)
+- [Privacy policy](https://accelerant.ai/privacy-policy/)
+- [GitHub](https://github.com/accelins)
+
+## API Evangelist rating
+
+**Kin Score 24.3** — emerging · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.8 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 35.5 |
+
+**Agent readiness 27.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 38.5** — Insurance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/accelerant/](https://apis.io/providers/accelerant/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Accelerant: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/accelerant/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
